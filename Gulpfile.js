@@ -8,7 +8,7 @@ const normalizeSEP = (str) => str.replace(/\//g, path.sep)
 
 process.chdir(path.resolve(__dirname))
 
-const docFolder = path.resolve(__dirname, '.doc')
+const docFolder = path.resolve(__dirname, 'docs/')
 
 const cleanDoc = () => del([
   docFolder
