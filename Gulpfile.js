@@ -10,10 +10,6 @@ process.chdir(path.resolve(__dirname))
 
 const docFolder = path.resolve(__dirname, 'docs/')
 
-const cleanDoc = () => del([
-  docFolder
-])
-
 const src = [
   './bin/**/*.js'
 ].map(normalizeSEP)
@@ -22,4 +18,4 @@ const generateDoc = () =>
   gulp.src(src, {read: false})
     .pipe(jsdoc(require('./jsdoc.json')))
 
-gulp.task('doc', gulp.series(cleanDoc, generateDoc))
+gulp.task('doc', gulp.series(generateDoc))
